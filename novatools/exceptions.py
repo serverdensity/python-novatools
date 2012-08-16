@@ -11,7 +11,7 @@ class OpenStackException(Exception):
         # log the stack
         # and continue
         if code == "DEFAULT":
-            logging.log(logging.INFO, "DEFAULT code detected in novatools: " + traceback.format_stack())
+            logging.log(logging.INFO, "DEFAULT code detected in novatools: " + str(traceback.format_stack()))
         
         self.code = code
         self.message = message or self.__class__.message
