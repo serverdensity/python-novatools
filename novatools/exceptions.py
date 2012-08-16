@@ -1,5 +1,4 @@
 import logging
-import traceback
 
 class OpenStackException(Exception):
     """
@@ -11,7 +10,7 @@ class OpenStackException(Exception):
         # log the error
         # and continue
         if code == "DEFAULT":
-            logging.log(logging.INFO, "DEFAULT code detected in novatools")
+            print "DEFAULT code detected in novatools"
         
         self.code = code
         self.message = message or self.__class__.message
