@@ -1,8 +1,18 @@
+import logging
+import traceback
+
 class OpenStackException(Exception):
     """
     The base exception class for all exceptions this library raises.
     """
-    def __init__(self, code, message=None, details=None):
+    def __init__(self, code="DEFAULT", message=None, details=None):
+        
+        # if we've been instantiated incorrectly
+        # log the stack
+        # and continue
+        if code == "DEFAULT":
+            logging.log(logging.INFO, "DEFAULT code detected in novatools: " + traceback.format_stack())
+        
         self.code = code
         self.message = message or self.__class__.message
         self.details = details
