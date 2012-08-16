@@ -8,10 +8,10 @@ class OpenStackException(Exception):
     def __init__(self, code="DEFAULT", message=None, details=None):
         
         # if we've been instantiated incorrectly
-        # log the stack
+        # log the error
         # and continue
         if code == "DEFAULT":
-            logging.log(logging.INFO, "DEFAULT code detected in novatools: " + str(traceback.format_stack()))
+            logging.log(logging.INFO, "DEFAULT code detected in novatools")
         
         self.code = code
         self.message = message or self.__class__.message
