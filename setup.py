@@ -11,7 +11,7 @@ if sys.version_info < (2,6):
 
 setup(
     name = "python-novatools",
-    version = "2.0-serverdensity5",
+    version = "2.0-serverdensity6",
     description = "Client library for OpenStack Nova API",
     long_description = read('README.rst'),
     url = 'https://github.com/rackspace/python-novatools',
@@ -29,10 +29,10 @@ setup(
         'Programming Language :: Python',
     ],
     install_requires = requirements,
-    
+
     tests_require = ["nose", "mock"],
     test_suite = "nose.collector",
-    
+
     entry_points = {
         'console_scripts': ['novatools = novatools.shell:main']
     }

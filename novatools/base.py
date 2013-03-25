@@ -108,9 +108,16 @@ class Resource(object):
         return "<%s %s>" % (self.__class__.__name__, info)
 
     def get(self):
-        new = self.manager.get(self.id)
-        if new:
-            self._add_details(new._info)
+
+        # our resources aren't held long enough to go stale
+        # so we can lose this and reduce the number of calls
+        # to the api
+
+        #new = self.manager.get(self.id)
+        #if new:
+        #    self._add_details(new._info)
+
+        pass
 
     def __eq__(self, other):
         if not isinstance(other, self.__class__):
